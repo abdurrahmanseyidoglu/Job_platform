@@ -14,9 +14,8 @@ components :{ Footer,Header }
 </script>
 
 <style lang="scss">
-.header{
-  width: 100vw;
-  
+*{
+  position: relative;
 }
 
 </style>

@@ -1,10 +1,20 @@
 <template>
   <div class="header">
+
     <nav class="container">
       <div class="nav-left">
-        <router-link to="#"><button class="sign-up">تسجيل دخول</button></router-link>
-        <router-link to="#"><button class="sign-in">انضم الى منور</button></router-link>
+        <router-link to="/signin"
+          ><button class="sign-in">
+            <i class="far fa-sign-in-alt"></i> تسجيل دخول
+          </button></router-link
+        >
+        <router-link to="signup"
+          ><button class="sign-up">
+            <i class="far fa-user-plus"></i> انضم الى منور
+          </button></router-link
+        >
       </div>
+      
       <div class="nav-right">
         <ul>
           <li>
@@ -29,12 +39,12 @@
       </div>
     </nav>
     <div class="line"></div>
+  
   </div>
+ 
 </template>
 <script>
-export default {
-  setup() {},
-};
+
 </script>
 <style lang="scss">
 .header {
@@ -43,52 +53,47 @@ export default {
     flex-flow: wrap row;
     justify-content: space-between;
     padding: 10px 20px;
-
     .nav-left {
-      .sign-in {
+      margin-top: 10px;
+      .sign-up {
         background: $blue;
         color: white;
         font-size: 1.2rem;
         cursor: pointer;
-        height: 2.25rem;
-        line-height: 2.25rem;
         font-weight: 600;
         text-align: center;
+        justify-content: center;
+        align-items: center;
         border: white solid 1px;
         white-space: nowrap;
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
+        padding: 0.5rem 1.25rem;
         border-radius: 7px;
         margin-left: 20px;
         &:hover {
           background-color: darken($blue, 20%);
         }
-        &:active{
+        &:active {
           border: red solid 1px;
         }
       }
-      .sign-up {
-      
+      .sign-in {
         background-color: #eaecee;
         color: #363f4a;
         font-weight: 600;
         font-size: 1.2rem;
         cursor: pointer;
-        height: 2.25rem;
-        line-height: 2.25rem;
         text-align: center;
         border: white solid 1px;
         white-space: nowrap;
-        padding-left: 1rem;
-        padding-right: 1.25rem;
+        padding: 0.5rem 1.25rem;
+
         border-radius: 7px;
         &:hover {
           background-color: darken(#eaecee, 20%);
         }
-        &:active{
+        &:active {
           border: red solid 1px;
         }
-       
       }
     }
     .nav-right {
@@ -100,7 +105,6 @@ export default {
         list-style: none;
         gap: 20px;
         font-size: 1.2rem;
-
       }
       li {
         :hover {
