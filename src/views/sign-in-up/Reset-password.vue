@@ -1,32 +1,32 @@
 <template>
-   <div class="container fadeInDown">
-  <div class="formContent">
-    <!-- Tabs Titles -->
-    <h3 class="active underlineHover"> إعادة تعيين كلمة السر </h3>
-    
-
-   
-
-    <!-- Login Form -->
-    <form>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="اسم المستخدم">
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="الايميل">
-      <input type="submit" class="fadeIn fourth" value="إعادة تعيين كلمة السر">
-    </form>
-
-    <!-- Remind Passowrd -->
-  
-
+  <div class="container fadeInDown">
+    <div class="formContent">
+      <h3 class="active underlineHover">إعادة تعيين كلمة السر</h3>
+      <form>
+        <input
+          type="text"
+          id="login"
+          class="fadeIn second"
+          name="login"
+          placeholder="اسم المستخدم"
+        />
+        <input
+          type="text"
+          id="login"
+          class="fadeIn second"
+          name="login"
+          placeholder="الايميل"
+        />
+        <input type="submit" class="fadeIn fourth" value="إعادة تعيين كلمة السر" />
+      </form>
+    </div>
   </div>
-</div>
 </template>
 
-
-
 <style lang="scss">
-.underlineHover{
+.underlineHover {
   color: #92badd;
-  display:inline-block;
+  display: inline-block;
   text-decoration: none;
   font-weight: 400;
 }
@@ -36,19 +36,15 @@ h3 {
   font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
-  display:inline-block;
-  margin: 40px 8px 10px 8px; 
+  display: inline-block;
+  margin: 40px 8px 10px 8px;
   color: #cccccc;
 }
-
-
-
-/* STRUCTURE */
 
 .container {
   display: flex;
   align-items: center;
-  flex-direction: column; 
+  flex-direction: column;
   justify-content: center;
   width: 100%;
   min-height: 100%;
@@ -64,8 +60,8 @@ h3 {
   max-width: 450px;
   position: relative;
   padding: 0px;
-  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
-  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
   text-align: center;
 }
 
@@ -78,8 +74,6 @@ h3 {
   border-radius: 0 0 10px 10px;
 }
 
-
-
 /* TABS */
 
 h3.inactive {
@@ -91,11 +85,11 @@ h3.active {
   border-bottom: 2px solid #5fbae9;
 }
 
-
-
 /* FORM TYPOGRAPHY*/
 
-input[type=button], input[type=submit], input[type=reset]  {
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
   background-color: $blue;
   border: none;
   color: white;
@@ -105,8 +99,8 @@ input[type=button], input[type=submit], input[type=reset]  {
   display: inline-block;
   text-transform: uppercase;
   font-size: 13px;
-  -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
-  box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+  -webkit-box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+  box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
   -webkit-border-radius: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px;
   margin: 5px 20px 40px 20px;
@@ -117,11 +111,15 @@ input[type=button], input[type=submit], input[type=reset]  {
   transition: all 0.3s ease-in-out;
 }
 
-input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
-  background-color: darken($blue , 20%);
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: darken($blue, 20%);
 }
 
-input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
+input[type="button"]:active,
+input[type="submit"]:active,
+input[type="reset"]:active {
   -moz-transform: scale(0.95);
   -webkit-transform: scale(0.95);
   -o-transform: scale(0.95);
@@ -129,7 +127,8 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active  
   transform: scale(0.95);
 }
 
-input[type=text] , input[type=password] {
+input[type="text"],
+input[type="password"] {
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;
@@ -150,16 +149,15 @@ input[type=text] , input[type=password] {
   border-radius: 5px 5px 5px 5px;
 }
 
-input[type=text]:focus , input[type=password]:focus {
+input[type="text"]:focus,
+input[type="password"]:focus {
   background-color: #fff;
   border-bottom: 2px solid #5fbae9;
 }
 
-input[type=text]:placeholder {
+input[type="text"]:placeholder {
   color: #cccccc;
 }
-
-
 
 /* ANIMATIONS */
 
@@ -200,23 +198,44 @@ input[type=text]:placeholder {
 }
 
 /* Simple CSS3 Fade-in Animation */
-@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 .fadeIn {
-  opacity:0;
-  -webkit-animation:fadeIn ease-in 1;
-  -moz-animation:fadeIn ease-in 1;
-  animation:fadeIn ease-in 1;
+  opacity: 0;
+  -webkit-animation: fadeIn ease-in 1;
+  -moz-animation: fadeIn ease-in 1;
+  animation: fadeIn ease-in 1;
 
-  -webkit-animation-fill-mode:forwards;
-  -moz-animation-fill-mode:forwards;
-  animation-fill-mode:forwards;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 
-  -webkit-animation-duration:1s;
-  -moz-animation-duration:1s;
-  animation-duration:1s;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  animation-duration: 1s;
 }
 
 .fadeIn.first {
@@ -259,19 +278,13 @@ input[type=text]:placeholder {
   color: #0d0d0d;
 }
 
-.underlineHover:hover:after{
+.underlineHover:hover:after {
   width: 100%;
 }
-
-
 
 /* OTHERS */
 
 *:focus {
-    outline: none;
-} 
-
-
-
-
+  outline: none;
+}
 </style>

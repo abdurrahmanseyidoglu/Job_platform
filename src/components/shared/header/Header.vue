@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="nav-header">
 
     <nav class="container">
       <div class="nav-left">
@@ -31,11 +31,7 @@
           </li>
           <li><router-link to="/about" class="link">حول منور</router-link></li>
         </ul>
-        <div class="logo-img">
-          <router-link to="/">
-            <img src="@/assets/images/logo.jpg" alt="Logo Image"
-          /></router-link>
-        </div>
+       
       </div>
     </nav>
     <div class="line"></div>
@@ -44,15 +40,24 @@
  
 </template>
 <script>
+export default {
+
+}
 
 </script>
-<style lang="scss">
-.header {
+<style lang="scss" scoped>
+.nav-header {
   .container {
     display: flex;
     flex-flow: wrap row;
     justify-content: space-between;
     padding: 10px 20px;
+    @include mq(tablet, max) {
+      display: none;
+      flex-flow: column wrap;
+      justify-content: center;
+      align-items: center;
+    }
     .nav-left {
       margin-top: 10px;
       .sign-up {
@@ -75,6 +80,7 @@
         &:active {
           border: red solid 1px;
         }
+        
       }
       .sign-in {
         background-color: #eaecee;
@@ -120,18 +126,18 @@
         }
       }
 
-      .logo-img {
-        img {
-          width: 40px;
-          height: 40px;
-          margin-left: 20px;
-        }
-      }
+  
     }
   }
   .line {
     border: 0.3px rgb(240, 240, 240) solid;
     background-color: rgb(240, 240, 240);
   }
+  hr {
+  border: 0;
+  height: 0;
+  margin: 1.5rem 0;
+  border-top: 1px solid var(--color-gray);
+}
 }
 </style>

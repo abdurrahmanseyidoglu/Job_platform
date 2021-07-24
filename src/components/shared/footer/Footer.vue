@@ -6,13 +6,21 @@
           <router-link to="">
             <li><span>وسائل التواصل الاجتماعي</span></li></router-link
           >
-         <a href="#"><li><i class="fab fa-facebook"></i> فيسبوك</li></a>
-         <a href="#"><li><i class="fab fa-twitter"></i> تويتر</li></a>
-         <a href="#"><li><i class="fab fa-instagram"></i> انستقرام </li></a>
-         <a href="#"><li><i class="fab fa-linkedin-in"></i> لينكيد ان</li></a>
+          <a href="#"
+            ><li><i class="fab fa-facebook"></i> فيسبوك</li></a
+          >
+          <a href="#"
+            ><li><i class="fab fa-twitter"></i> تويتر</li></a
+          >
+          <a href="#"
+            ><li><i class="fab fa-instagram"></i> انستقرام</li></a
+          >
+          <a href="#"
+            ><li><i class="fab fa-linkedin-in"></i> لينكيد ان</li></a
+          >
         </ul>
       </div>
-      
+
       <div class="features">
         <ul>
           <li><span>طرق التواصل</span></li>
@@ -44,16 +52,15 @@
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident, cumqueelit.
           Provident, cumque..
         </p>
-        <router-link to="/signup" ><button class="sign-up">انضم الى منور</button></router-link>
       </div>
+      <!-- <router-link to="/signup"
+        ><button class="sign-up">انضم الى منور</button></router-link
+      > -->
     </div>
   </footer>
-
 </template>
 
-
 <script></script>
-
 
 <style lang="scss">
 footer {
@@ -61,6 +68,7 @@ footer {
   display: flex;
   flex-flow: wrap column;
   justify-content: center;
+  align-items: center;
   padding: 50px 0px;
   margin: 50px;
   border-radius: 7px;
@@ -70,6 +78,21 @@ footer {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    @include mq (tablet,max){
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      justify-content:center;
+      ul{
+      text-align: center;
+        margin: auto;
+        padding: 0;
+      }
+      li{
+        margin: 0;
+        padding: 0;
+      }
+    }
     ul {
       list-style: none;
     }
@@ -83,7 +106,6 @@ footer {
         color: black;
         font-weight: bold;
         line-height: 50px;
-
       }
     }
 
@@ -92,30 +114,37 @@ footer {
       flex-flow: column wrap;
       align-items: center;
       justify-content: center;
-      .sign-up {
-        background: $blue;
-        color: white;
-        font-size: 1.2rem;
-        cursor: pointer;
-        font-weight: 600;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        border: white solid 1px;
-        white-space: nowrap;
-        padding: 0.5rem 1.25rem;
-        border-radius: 7px;
-        margin-left: 20px;
-        &:hover {
-          background-color: darken($blue, 20%);
-        }
-        &:active {
-          border: red solid 1px;
-        }
+      @include mq(tablet, max) {
+        display: none;
       }
+
       img {
         width: 50px;
         height: 50px;
+      }
+    }
+    .sign-up {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: $blue;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      font-weight: 600;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      border: white solid 1px;
+      white-space: nowrap;
+      padding: 0.5rem 1.25rem;
+      border-radius: 7px;
+      margin-top: 10px;
+      &:hover {
+        background-color: darken($blue, 20%);
+      }
+      &:active {
+        border: red solid 1px;
       }
     }
     p {

@@ -32,7 +32,7 @@ export default {
 
         .hero{
             background-image: url(../../assets/images/hero.jpg);
-            height: 90vh;
+            min-height: 90vh;
             background-size: cover;
             margin: 50px;
             border-radius: 7px;
@@ -43,7 +43,11 @@ export default {
             justify-content:center;
             }
             
-          
+          @include mq(tablet, max) {
+            background-image: none;
+            text-align: center;
+            min-height: auto;
+          }
 
         }
         .sign-up {

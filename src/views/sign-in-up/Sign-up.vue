@@ -18,7 +18,7 @@
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
-      <a class="underlineHover" href="#">نسيت كلمة السر</a>
+      <router-link to="/reset-password"><a class="underlineHover" href="#">نسيت كلمة السر</a></router-link>
     </div>
 
   </div>

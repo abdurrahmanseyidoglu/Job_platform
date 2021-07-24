@@ -94,6 +94,7 @@
 
 <style lang="scss">
 .contact {
+  margin: 0px 40px;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -118,11 +119,7 @@
       flex-direction: column;
       flex-wrap: wrap;
     }
-    &-form-contact {
-      color: red;
-      font-weight: bold;
-      font-size: 1rem;
-    }
+   
     &-form-contact-us {
       text-align: center;
       margin: 0;
@@ -219,9 +216,7 @@
       &__header {
         align-items: center;
         justify-content: center;
-        &-img {
-          display: none;
-        }
+       
         &-phone-adress {
           gap: 0;
         }
@@ -274,6 +269,8 @@
     list-style: none;
 
     summary {
+        border-radius: 7px;
+
       :hover {
         cursor: pointer;
       }
