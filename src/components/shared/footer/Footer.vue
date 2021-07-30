@@ -72,6 +72,10 @@ footer {
   padding: 50px 0px;
   margin: 50px;
   border-radius: 7px;
+  @include mq (tablet,max){
+     padding:  0px;
+  margin: 20px;
+  }
 
   bottom: 0;
   .container {

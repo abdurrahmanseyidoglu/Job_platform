@@ -5,22 +5,23 @@
       <form>
         <input
           type="text"
-          id="login"
+          
           class="fadeIn second"
-          name="login"
+          name="username"
           placeholder="اسم المستخدم"
         />
         <input
           type="text"
-          id="login"
+          
           class="fadeIn second"
-          name="login"
+          name="email"
           placeholder="الايميل"
         />
         <input type="submit" class="fadeIn fourth" value="إعادة تعيين كلمة السر" />
       </form>
     </div>
   </div>
+  
 </template>
 
 <style lang="scss">

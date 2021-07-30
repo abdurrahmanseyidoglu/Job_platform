@@ -9,8 +9,8 @@
 
     <!-- Login Form -->
     <form>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="الايميل">
-      <input type="password" id="password" class="fadeIn third" name="login" placeholder="كلمة المرور">
+      <input type="text" id="login" class="fadeIn second mail" name="email" placeholder="الايميل">
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="كلمة المرور">
       <input type="submit" class="fadeIn fourth" value="تسجيل الدخول">
     </form>
 

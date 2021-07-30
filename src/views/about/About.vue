@@ -6,7 +6,8 @@
       <p class="about-paragraph">
         .نحن نؤمن بشدة أن الشركات العظيمة مصنوعة من قبل أشخاص عظماء <br />
         لهذا السبب نساعد آلاف الشركات في جذب وإدارة وتوظيف مواهبهم العظيمة التالية بطريقة
-ذكية      </p>
+        ذكية
+      </p>
     </div>
     <p class="about-us">
       منور هو السوق العربي الأول لعرض خدمات الشركات , يجمع منور بين الشركات العربية
@@ -32,9 +33,13 @@
   flex-flow: wrap column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   padding: 50px 0px;
   margin: 50px;
   border-radius: 7px;
+  @include mq(tablet, max) {
+  padding: 0px 20px;
+  }
   img {
     width: 50px;
     height: 50px;
@@ -54,6 +59,20 @@
       align-items: center;
       justify-content: center;
       font-size: 1.3rem;
+    }
+  }
+  .about-us {
+    text-align: center;
+    width: 50%;
+    @include mq(tablet, max) {
+      width: 70%;
+    }
+  }
+  .about-company {
+    text-align: center;
+    width: 50%;
+    @include mq(tablet, max) {
+      width: 70%;
     }
   }
 }

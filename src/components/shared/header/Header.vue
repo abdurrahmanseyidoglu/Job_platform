@@ -4,12 +4,12 @@
     <nav class="container">
       <div class="nav-left">
         <router-link to="/signin"
-          ><button class="sign-in">
+          ><button class="sign-in" >
             <i class="far fa-sign-in-alt"></i> تسجيل دخول
           </button></router-link
         >
         <router-link to="signup"
-          ><button class="sign-up">
+          ><button class="sign-up" >
             <i class="far fa-user-plus"></i> انضم الى منور
           </button></router-link
         >
@@ -40,9 +40,15 @@
  
 </template>
 <script>
+import { mapMutations } from 'vuex';
 export default {
-
-}
+methods:{
+  // ...mapMutations(['toggleAuthModal']),
+  // toggleAuthModal(){
+  //   this.$store.commit('toggleAuthModal');
+  // },
+},
+};
 
 </script>
 <style lang="scss" scoped>

@@ -23,11 +23,21 @@
         </div>
         <form @submit.prevent="send" class="contact__form">
           <div class="contact__form-nameMail">
-            <input type="text" name="email" placeholder="الاسم" />
-            <input type="text" name="name" placeholder="الايميل" />
+            <input type="text" name="name" class="contact-mail" placeholder="الاسم" />
+            <input
+              type="text"
+              name="email"
+              class="contact-password"
+              placeholder="الايميل"
+            />
           </div>
           <div class="contact__form-message">
-            <textarea type="text" name="name" placeholder="رسالتك" />
+            <textarea
+              type="text"
+              name="message"
+              class="contact-message"
+              placeholder="رسالتك"
+            />
           </div>
           <div class="contact__form-btn">
             <input type="submit" value="إرسال" />
@@ -36,56 +46,41 @@
         </form>
       </div>
     </div>
-
     <div class="faq">
-      <h3 class="faq__title">الأسئلة الشائعة</h3>
-      <ul class="faq__questions">
-        <details>
-          <summary>
-            <li class="faq__question">
-              Lorem ipsum dolor sit amet, consectetur adipisicing?
-            </li>
-          </summary>
-          <li class="faq__answer">
-            Dolore minima rerum dicta reiciendis, maiores tenetur nisi sint!
-          </li>
-        </details>
-        <details>
-          <summary>
-            <li class="faq__question">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, provident?
-            </li>
-          </summary>
-          <li class="faq__answer">
-            quidem iusto labore dolorum quod consectetur dolore quaerat nam maxime!
-          </li>
-        </details>
-        <details>
-          <summary>
-            <li class="faq__question">sapiente odit ex consequuntur iure a ducimus?</li>
-          </summary>
-          <li class="faq__answer">Illo aspernatur consequuntur fugit itaque.</li>
-        </details>
-        <details>
-          <summary>
-            <li class="faq__question">
-              velit in magni consectetur totam qui quaerat, blanditiis optio eos,
-              assumenda ipsam repellat?
-            </li>
-          </summary>
-          <li class="faq__answer">aperiam saepe. Sunt, velit consequuntur.</li>
-        </details>
-        <details>
-          <summary>
-            <li class="faq__question">
-              tempora explicabo est tenetur accusantium id reprehenderit?
-            </li>
-          </summary>
-          <li class="faq__answer">
-            Sed tempore ipsum quidem modi maxime culpa pariatur nemo labore.
-          </li>
-        </details>
-      </ul>
+      <div class="faq-header">الأسئلة الشائعة</div>
+      <br />
+
+      <div class="content">
+        <div>
+          <input type="checkbox" id="question1" class="questions" />
+          <div class="plus">+</div>
+          <label for="question1" class="question">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, culpa?
+          </label>
+          <div class="answers">
+            TLorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, culpa? .
+          </div>
+        </div>
+
+        <div>
+          <input type="checkbox" id="question2" class="questions" />
+          <div class="plus">+</div>
+          <label for="question2" class="question"> Short? </label>
+          <div class="answers">short!</div>
+        </div>
+
+        <div>
+          <input type="checkbox" id="question3" class="questions" />
+          <div class="plus">+</div>
+          <label for="question3" class="question">
+            KeepLorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, culpa?
+            text wraps.
+          </label>
+          <div class="answers">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, culpa?
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -93,16 +88,31 @@
 <script></script>
 
 <style lang="scss">
+textarea {
+  background-color: #f6f6f6;
+  color: #0d0d0d;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  width: 85%;
+  :focus {
+    transition: all 0.5s ease-in-out;
+    border-bottom: 2px solid #5fbae9;
+  }
+}
+
 .contact {
-  margin: 0px 40px;
-  background-color: white;
+  margin: 0px 50px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   &__form {
-    box-shadow: 0px 0px 12px 0px rgb(0, 140, 255);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 7px;
     :focus {
       background-color: #fff;
@@ -119,7 +129,7 @@
       flex-direction: column;
       flex-wrap: wrap;
     }
-   
+
     &-form-contact-us {
       text-align: center;
       margin: 0;
@@ -216,7 +226,7 @@
       &__header {
         align-items: center;
         justify-content: center;
-       
+
         &-phone-adress {
           gap: 0;
         }
@@ -247,58 +257,84 @@
 }
 
 .faq {
+  background-color: #eaecee;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
-  color: white;
-  details summary::marker {
-    color: rgb(53, 52, 52);
-  }
-  &__title {
-    margin: 0;
-    color: rgb(53, 52, 52);
-    font-weight: bold;
-    font-size: 2rem;
-    line-height: 30px;
-  }
+  font-weight: bold;
+  padding: 20px;
+}
+.content {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
 
-  &__questions {
-    list-style: none;
+.faq-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
 
-    summary {
-        border-radius: 7px;
+/*Question*/
+.question {
+  position: relative;
+  margin: 0;
+  padding: 10px 10px 10px 50px;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+/*Answer*/
+.answers {
+  padding: 0px 15px;
+  margin: 5px 0;
+  height: 0;
+  overflow: hidden;
+  color: red;
+  position: relative;
+  opacity: 0;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
 
-      :hover {
-        cursor: pointer;
-      }
-      ::marker {
-        color: $blue;
-      }
-    }
-    details summary {
-      background-color: rgb(53, 52, 52);
-      padding-bottom: 15px;
-      padding-left: 10px;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-  }
-  &__answer {
-    background-color: #eaecee;
-    padding: 15px;
-    margin-bottom: 10px;
-    color: black;
-  }
-  @include mq(tablet, max) {
-    margin: 0;
-    &__questions {
-      margin: 5px;
-      padding: 0;
-    }
-  }
+.questions:checked ~ .answers {
+  height: auto;
+  opacity: 1;
+  padding: 15px;
+}
+
+/*FAQ Toggle*/
+.plus {
+  position: absolute;
+  margin-left: 10px;
+  z-index: 5;
+  font-size: 2em;
+  line-height: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.questions:checked ~ .plus {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.questions {
+  display: none;
 }
 
 .messageSent {

@@ -1,7 +1,8 @@
 <template>  
   <Header />
   <router-view/>
-  <Footer />
+  <Footer v-if="!['Signin', 'Signup','Reset'].includes($route.name)" />
+  
 </template>
 <script>
 import Header from '@/components/shared/header/Header.vue'
@@ -14,6 +15,7 @@ components :{ Footer,Header }
 </script>
 
 <style lang="scss">
+
 *{
   position: relative;
 }
