@@ -8,30 +8,76 @@
       <h3 class="active">إنشاء حساب جديد</h3>
 
       <!-- Login Form -->
-      <vee-form :validation-schema="schema">
+      <vee-form :validation-schema="schema" @submit="register">
         <vee-field
+          as="input"
           type="text"
-          class="fadeIn first"
-          name="username"
+          class="fadeIn first username"
+          name="الاسم"
           placeholder="اسم المستخدم"
         />
         <ErrorMessage
-          v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"
-          name="username"
+          v-bind:style="{
+            textTransform: capitalize,
+            color: redColor,
+            fontSize: fontSize + 'px',
+          }"
+          name="الاسم"
         />
-        <input type="text" class="fadeIn second" name="email" placeholder="الايميل" />
-        <input
-          type="password"
-          class="fadeIn third"
-          name="password"
-          placeholder="كلمة المرور"
+        <vee-field
+          as="input"
+          type="text"
+          class="fadeIn second email"
+          name="الايميل"
+          placeholder="الايميل"
         />
-        <input
+        <ErrorMessage
+          v-bind:style="{
+            textTransform: capitalize,
+            color: redColor,
+            fontSize: fontSize + 'px',
+          }"
+          name="الايميل"
+        />
+        <div>
+          <vee-field
+            as="input"
+            :type="passwordFieldType"
+            v-model="password"
+            class="fadeIn third password"
+            name="كلمة_المرور"
+            placeholder="كلمة المرور"
+          />
+          <i
+            class="fas fa-eye-slash toggleShow"
+            type="password"
+            @click="switchVisibility"
+          ></i>
+        </div>
+        <ErrorMessage
+          v-bind:style="{
+            textTransform: capitalize,
+            color: redColor,
+            fontSize: fontSize + 'px',
+          }"
+          name="كلمة_المرور"
+        />
+        <vee-field
+          as="input"
           type="password"
-          class="fadeIn fourth"
-          name="confirm-password"
+          class="fadeIn fourth confirmPassword"
+          name="تأكيد_كلمة_المرور"
           placeholder="تأكيد كلمة المرور"
         />
+        <ErrorMessage
+          v-bind:style="{
+            textTransform: capitalize,
+            color: redColor,
+            fontSize: fontSize + 'px',
+          }"
+          name="تأكيد_كلمة_المرور"
+        />
+
         <input type="submit" class="fadeIn fourth" value="إنشاء حساب" />
       </vee-form>
 
@@ -50,20 +96,47 @@ export default {
   data() {
     return {
       schema: {
-        username: "required|min:4|max:20",
-        // email:'required' ,
-        // password:'required',
-        // confirm-password:'required'
+        الاسم: "required|min:4|max:20",
+        الايميل: "required|min:10|max:100|email",
+        كلمة_المرور: "required|min:6|max:70",
+        تأكيد_كلمة_المرور: "required|confirmed:@كلمة_المرور",
       },
-      activeColor: "red",
-      fontSize: 20,
+      redColor: "red",
+      fontSize: 16,
+      capitalize: "capitalize",
+
+      password: "",
+      passwordFieldType: "password",
     };
+  },
+  methods: {
+    register(values) {
+      console.log(values);
+    },
+    switchVisibility() {
+      this.passwordFieldType = this.passwordFieldType === "password" ? "text" : "password";
+    },
   },
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css?family=Poppins");
+.toggleShow {
+  position :absolute;
+  margin: 20px 0 0 -40px ;
+  &:hover{
+    cursor: pointer;
+  }
+  &:active{
+    color: green;
+  }
+  
+}
+span {
+  display: flex;
+  flex-flow: column wrap;
+}
 
 .underlineHover {
   color: #92badd;
@@ -82,8 +155,6 @@ h3 {
   color: #cccccc;
 }
 
-/* STRUCTURE */
-
 .container {
   display: flex;
   align-items: center;
@@ -92,6 +163,12 @@ h3 {
   width: 100%;
   min-height: 100%;
   padding: 20px;
+  @include mq(tablet, max) {
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-top: 100px;
+  }
 }
 
 .formContent {
@@ -171,8 +248,9 @@ input[type="reset"]:active {
 }
 
 input[type="text"],
-input[type="password"] {
-  background-color: #f6f6f6;
+input[type="password"],
+input[type="passwordFieldType"] {
+  background-color: #eaecee;
   border: none;
   color: #0d0d0d;
   padding: 15px 32px;
@@ -182,7 +260,7 @@ input[type="password"] {
   font-size: 16px;
   margin: 5px;
   width: 85%;
-  border: 2px solid #f6f6f6;
+  border: 2px solid white;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -ms-transition: all 0.5s ease-in-out;

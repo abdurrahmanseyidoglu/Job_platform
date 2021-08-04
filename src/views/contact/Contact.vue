@@ -23,11 +23,11 @@
         </div>
         <form @submit.prevent="send" class="contact__form">
           <div class="contact__form-nameMail">
-            <input type="text" name="name" class="contact-mail" placeholder="الاسم" />
+            <input type="text"  class="contact-name" placeholder="الاسم" />
             <input
               type="text"
               name="email"
-              class="contact-password"
+              class="contact-email"
               placeholder="الايميل"
             />
           </div>
@@ -40,7 +40,7 @@
             />
           </div>
           <div class="contact__form-btn">
-            <input type="submit" value="إرسال" />
+            <input type="submit" class="send" value="إرسال" />
           </div>
           <h2 class="messageSent"></h2>
         </form>
@@ -65,8 +65,8 @@
         <div>
           <input type="checkbox" id="question2" class="questions" />
           <div class="plus">+</div>
-          <label for="question2" class="question"> Short? </label>
-          <div class="answers">short!</div>
+          <label for="question2" class="question"> Shoretehrrhrh </label>
+          <div class="answers">shrhrhrrhrhrhrhrh</div>
         </div>
 
         <div>
@@ -88,8 +88,27 @@
 <script></script>
 
 <style lang="scss">
+.send {
+        background: $blue !important;
+        color: white;
+        font-size: 1.2rem !important;
+        cursor: pointer;
+        font-weight: 600;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        border: white solid 1px;
+        white-space: nowrap;
+        padding: 0.5rem 1.25rem;
+        border-radius: 7px;
+        margin-left: 20px;
+        &:hover {
+          background-color: darken($blue, 20%)!important;
+        }
+       
+}
 textarea {
-  background-color: #f6f6f6;
+background-color: #eaecee;
   color: #0d0d0d;
   padding: 15px 32px;
   text-align: center;
@@ -180,9 +199,9 @@ textarea {
       height: 40px;
       border: none;
       font-size: 1rem;
-      background-color: rgb(71, 68, 68);
+     background-color: #eaecee !important;
       &::placeholder {
-        color: rgb(204, 193, 193);
+        color: rgb(145, 139, 139);
         margin-left: 20px;
       }
     }
@@ -205,11 +224,14 @@ textarea {
       font-size: 1.2rem;
       resize: none;
       border-radius: 7px;
-      background-color: #f6f6f6;
+background-color: #eaecee;
       &::placeholder {
         color: rgb(204, 193, 193);
         font-size: 1rem;
         padding: 10px 10px;
+      }
+      &:focus{
+        background-color: #eaecee !important;
       }
     }
   }

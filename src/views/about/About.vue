@@ -39,6 +39,7 @@
   border-radius: 7px;
   @include mq(tablet, max) {
   padding: 0px 20px;
+  margin:10px;
   }
   img {
     width: 50px;

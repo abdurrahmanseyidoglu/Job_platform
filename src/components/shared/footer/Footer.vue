@@ -3,9 +3,7 @@
     <div class="container">
       <div class="about-us">
         <ul>
-          <router-link to="">
-            <li><span>وسائل التواصل الاجتماعي</span></li></router-link
-          >
+          <li><span>وسائل التواصل الاجتماعي</span></li>
           <a href="#"
             ><li><i class="fab fa-facebook"></i> فيسبوك</li></a
           >
@@ -39,9 +37,7 @@
       </div>
       <div class="resources">
         <ul>
-          <router-link to=""
-            ><li><span>خدماتنا</span></li></router-link
-          >
+          <li><span>خدماتنا</span></li>
           <router-link to=""><li>الرئيسية</li></router-link>
           <router-link to=""><li>سياسة الاستخدام</li></router-link>
         </ul>
@@ -72,9 +68,13 @@ footer {
   padding: 50px 0px;
   margin: 50px;
   border-radius: 7px;
-  @include mq (tablet,max){
-     padding:  0px;
-  margin: 20px;
+  @include mq(tablet, max) {
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    padding-top: 0px;
+    padding-bottom: 10px;
   }
 
   bottom: 0;
@@ -82,17 +82,18 @@ footer {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    @include mq (tablet,max){
+    @include mq(tablet, max) {
       display: flex;
       flex-flow: column wrap;
       align-items: center;
-      justify-content:center;
-      ul{
-      text-align: center;
+      justify-content: center;
+      margin-top: 0px;
+      ul {
+        text-align: center;
         margin: auto;
         padding: 0;
       }
-      li{
+      li {
         margin: 0;
         padding: 0;
       }

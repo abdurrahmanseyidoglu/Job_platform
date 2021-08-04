@@ -50,6 +50,13 @@ h3 {
   width: 100%;
   min-height: 100%;
   padding: 20px;
+   @include mq(tablet, max) {
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-top: 100px;
+  
+  }
 }
 
 .formContent {
