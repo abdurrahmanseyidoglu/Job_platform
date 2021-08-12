@@ -49,7 +49,7 @@
             placeholder="كلمة المرور"
           />
           <i
-            class="fas fa-eye-slash toggleShow"
+            class="fas fa-eye-slash toggleShow fadeIn fourth"
             type="password"
             @click="switchVisibility"
           ></i>
@@ -68,6 +68,7 @@
           class="fadeIn fourth confirmPassword"
           name="تأكيد_كلمة_المرور"
           placeholder="تأكيد كلمة المرور"
+          data="تأكيد كلمة مرور"
         />
         <ErrorMessage
           v-bind:style="{

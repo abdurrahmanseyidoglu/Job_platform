@@ -26,7 +26,7 @@
             placeholder="كلمة المرور"
           />
           <i
-            class="fas fa-eye-slash toggleShow"
+            class="fas fa-eye-slash toggleShow fadeIn fourth"
             type="password"
             @click="switchVisibility"
           ></i>
