@@ -10,7 +10,7 @@
       </div>
     </div>
   </div>
-  <CardsFilter />
+  
 </template>
 
 <script>

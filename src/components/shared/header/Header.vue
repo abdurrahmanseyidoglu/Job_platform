@@ -12,20 +12,26 @@
             <i class="far fa-user-plus"></i> انضم الى منور
           </button></router-link
         >
-      </div>
-
+        </div>
+     
       <div class="nav-right">
         <ul>
           <li>
-            <router-link to="/" class="link"
-              ><span class="home-icon"><i class="far fa-home"></i></span>
-              الرئيسية</router-link
-            >
+            <router-link to="/" class="link">
+              الرئيسية <span class="home-icon"><i class="far fa-home"></i></span
+            ></router-link>
           </li>
           <li>
-            <router-link to="/contact" class="link"
-              ><span class="contact-icon"> <i class="fal fa-envelope-square"></i></span>
+            <router-link to="/applications" class="link">
+              الطلبات <i class="far fa-list"> </i>
+            </router-link>
+          </li>
+          <li>
+            <router-link to="/contact" class="link">
               تواصل معنا
+              <span class="contact-icon">
+                <i class="fal fa-envelope-square"></i
+              ></span>
             </router-link>
           </li>
           <li><router-link to="/about" class="link">حول منور</router-link></li>
@@ -47,6 +53,10 @@
         <ul id="menu">
           <li>
             <router-link to="/" class="link"> الرئيسية</router-link>
+          </li>
+           <li>
+            <router-link to="/applications" class="link">
+              الطلبات </router-link>
           </li>
           <li>
             <router-link to="/contact" class="link"> تواصل معنا </router-link>
@@ -75,6 +85,7 @@
 </template>
 <script>
 import { mapMutations } from "vuex";
+
 export default {
   methods: {
     // ...mapMutations(['toggleAuthModal']),
@@ -86,14 +97,15 @@ export default {
 </script>
 <style lang="scss" scoped>
 .nav-header-desktop {
-  .container {
+  
+  background-color:white;
+   .container {
     display: flex;
     flex-flow: wrap row;
     justify-content: space-between;
     padding: 10px 20px;
     @include mq(tablet, max) {
       display: none;
-     
     }
     .nav-left {
       margin-top: 10px;
@@ -115,7 +127,7 @@ export default {
           background-color: darken($blue, 20%);
         }
         &:active {
-        transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
           background-color: darken($blue, 30%);
         }
       }
@@ -135,9 +147,8 @@ export default {
           background-color: darken(#eaecee, 20%);
         }
         &:active {
-        transition: all 0.3s ease-in-out;
-        background-color: darken(#eaecee, 30%);
-
+          transition: all 0.3s ease-in-out;
+          background-color: darken(#eaecee, 30%);
         }
       }
     }
@@ -264,7 +275,6 @@ export default {
   -webkit-touch-callout: none;
 }
 
-
 #menuToggle span {
   display: block;
   width: 33px;
@@ -291,24 +301,20 @@ export default {
   transform-origin: 0% 100%;
 }
 
-
 #menuToggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: #232323;
 }
 
-
 #menuToggle input:checked ~ span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-
 #menuToggle input:checked ~ span:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
 }
-
 
 #menu {
   position: absolute;
@@ -330,9 +336,12 @@ export default {
 #menu li {
   padding: 10px 0;
   font-size: 22px;
+
+  
 }
 
 #menuToggle input:checked ~ ul {
   transform: none;
+  
 }
 </style>
